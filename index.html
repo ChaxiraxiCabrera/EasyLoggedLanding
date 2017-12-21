@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="EasyLoggedLanding">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +11,10 @@
     <title>Grayscale - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -26,15 +29,22 @@
 <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-default" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">EasyLogged</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#">EasyLogged</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#about">About</a>
                     </li>
@@ -47,17 +57,21 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                     </li>
+
                 </ul>
             </div>
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container-fluid -->
     </nav>
+
 
     <!-- Intro Header -->
     <header class="masthead">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-lg-8 col-lg-offset-2">
                         <h1 class="brand-heading">EasyLogged</h1>
                         <p class="intro-text">A free login controller system.
                             <br>Based on AngularJS and Firebase.</p>
@@ -74,7 +88,7 @@
     <section id="about" class="content-section text-center">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
+                <div class="col-lg-8 col-lg-offset-2">
                     <h2>About EasyLogged</h2>
                     <p>EasyLogged is a free login controlled system created by AngularJS and based on Firebase. You can use it right now, simply download it on
                         <a href="https://github.com/ChaxiraxiCabrera/EasyLogged">our github repository</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
@@ -87,13 +101,16 @@
     <!-- Demo Section -->
     <section id="demo" class="demo-section content-section text-center">
         <div class="container">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-8 col-lg-offset-2">
                 <h2>Demo EasyLogged</h2>
                 <p>You can test EasyLogged with the next register button.</p>
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registerComponent">Register</button>
-                <easy-modal-component></easy-modal-component>
-                <!-- Solo muestra el mensaje si esta logeado -->
-                
+                <easy-log-modal></easy-log-modal>
+
+                <div class="message">
+                    <h2 easy-log="in">Wellcome</h2>
+                </div>
+
             </div>
         </div>
     </section>
@@ -101,7 +118,7 @@
     <!-- Download Section -->
     <section id="download" class="download-section content-section text-center">
         <div class="container">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-8 col-lg-offset-2">
                 <h2>Download EasyLogged</h2>
                 <p>You can download EasyLogged for free on next repository at Github.</p>
                 <a href="https://github.com/ChaxiraxiCabrera/EasyLogged" class="btn btn-default btn-lg">Visit Download Page</a>
@@ -113,29 +130,19 @@
     <section id="contact" class="content-section text-center contact-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
+                <div class="col-lg-8 col-lg-offset-2">
                     <h2>Contact Us</h2>
                     <p>Feel free to leave us a comment on our
                         <a href="https://github.com/ChaxiraxiCabrera/EasyLogged">repository</a> on Github to give some feedback about this project!</p>
                     <ul class="list-inline banner-social-buttons">
-                        <li class="list-inline-item">
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
-                  <i class="fa fa-twitter fa-fw"></i>
-                  <span class="network-name">Twitter</span>
-                </a>
-                        </li>
+
                         <li class="list-inline-item">
                             <a href="https://github.com/BlackrockDigital/startbootstrap" class="btn btn-default btn-lg">
                   <i class="fa fa-github fa-fw"></i>
                   <span class="network-name">Github</span>
                 </a>
                         </li>
-                        <li class="list-inline-item">
-                            <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg">
-                  <i class="fa fa-google-plus fa-fw"></i>
-                  <span class="network-name">Google+</span>
-                </a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -149,6 +156,10 @@
         </div>
     </footer>
 
+
+    <!-- Third Party Libraries -->
+    <script src="vendor/angular.js"></script>
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -158,6 +169,39 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.js"></script>
+
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA1vRfnMszrCl1rvF-CEtHORKFfCNwocto",
+            authDomain: "easyloggedlanding.firebaseapp.com",
+            databaseURL: "https://easyloggedlanding.firebaseio.com",
+            projectId: "easyloggedlanding",
+            storageBucket: "",
+            messagingSenderId: "538535960151"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+
+    <!-- App -->
+    <script src="js/app.config.js"></script>
+
+    <!-- Services and factories -->
+
+    <!-- Components -->
+    <script src="vendor/EasyLogged/app.js"></script>
+    <script src="vendor/EasyLogged/firebaseProvider.factory.js"></script>
+    <script src="vendor/EasyLogged/register.component.js"></script>
+
+    <!-- Controllers -->
 
 </body>
 
