@@ -1,6 +1,6 @@
 angular.module('EasyModal')
     .component('easyLogModal', {
-        templateUrl: '/vendor/EasyLogged/register.html',
+        templateUrl: '/EasyLoggedLanding/vendor/EasyLogged/register.html',
         controller: controller,
         controllerAs: 'registerComponent',
         bindings: {
